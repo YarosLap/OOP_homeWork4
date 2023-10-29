@@ -11,8 +11,8 @@ public class StudentController implements UserController<Student>{
     private final StudentView studentView = new StudentView();
 
     @Override
-    public void create(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
-        dataService.create(firstName, secondName, patronymic, dateOfBirth);
+    public void create(String firstName, String secondName, LocalDate dateOfBirth) {
+        dataService.create(firstName, secondName, dateOfBirth);
         studentView.sendOnConsole(dataService.getAll());
     }
 

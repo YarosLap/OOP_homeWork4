@@ -13,7 +13,7 @@ public class TeacherController implements UserController<Teacher>{
     private final TeacherView studentView = new TeacherView();
 
     @Override
-    public void create(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
+    public void create(String firstName, String secondName, LocalDate dateOfBirth) {
         dataService.create(firstName, secondName, patronymic, dateOfBirth);
         studentView.sendOnConsole(dataService.getAll());
     }

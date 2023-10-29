@@ -5,13 +5,11 @@ import java.time.LocalDate;
 public class User {
     private String firstName;
     private String secondName;
-    private String patronymic;
     private LocalDate dateOfBirth;
 
-    public User(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
+    public User(String firstName, String secondName, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.secondName = secondName;
-        this.patronymic = patronymic;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -31,13 +29,6 @@ public class User {
         this.secondName = secondName;
     }
 
-    public String getPatronymic() {
-        return patronymic;
-    }
-
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
-    }
 
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
@@ -52,7 +43,6 @@ public class User {
         return "User{" +
                 "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
-                ", patronymic='" + patronymic + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
@@ -74,10 +64,6 @@ public class User {
         }
         if (getSecondName() != null ? !getSecondName().equals(user.getSecondName()) :
                 user.getSecondName() != null) {
-            return false;
-        }
-        if (getPatronymic() != null ? !getPatronymic().equals(user.getPatronymic()) :
-                user.getPatronymic() != null) {
             return false;
         }
         return getDateOfBirth() != null ? getDateOfBirth().equals(user.getDateOfBirth()) :
